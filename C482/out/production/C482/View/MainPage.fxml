@@ -1,0 +1,118 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.shape.Rectangle?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane fx:id="anchorPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="900.0" style="-fx-background-color: GRAY;" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controllers.MainController">
+   <children>
+      <Label layoutX="44.0" layoutY="14.0" prefHeight="17.0" prefWidth="367.0" text="Inventory Management System" AnchorPane.leftAnchor="44.0" AnchorPane.topAnchor="14.0">
+         <font>
+            <Font name="Century Gothic Bold" size="24.0" />
+         </font>
+      </Label>
+      <Button fx:id="btnExit" layoutX="772.0" layoutY="555.0" mnemonicParsing="false" onAction="#exitButtonClicked" prefHeight="31.0" prefWidth="69.0" style="-fx-background-color: ORANGE;" text="Exit" textAlignment="CENTER" AnchorPane.leftAnchor="772.0" AnchorPane.topAnchor="555.0">
+         <font>
+            <Font name="Century Gothic" size="14.0" />
+         </font></Button>
+      <Rectangle arcHeight="5.0" fill="#28282830" height="493.0" layoutX="44.0" layoutY="54.0" stroke="BLACK" strokeType="INSIDE" width="367.0" AnchorPane.leftAnchor="44.0" AnchorPane.topAnchor="54.0" />
+      <TextField fx:id="searchPartField" layoutX="222.0" layoutY="59.0" onAction="#searchPartsEnter" prefHeight="24.0" prefWidth="180.0" promptText="Search by ID or Name" AnchorPane.leftAnchor="222.0" AnchorPane.topAnchor="59.0" />
+      <Label layoutX="53.0" layoutY="54.0" prefHeight="31.0" prefWidth="173.0" text="Parts" AnchorPane.leftAnchor="53.0" AnchorPane.topAnchor="54.0">
+         <font>
+            <Font name="Century Gothic Bold" size="24.0" />
+         </font>
+      </Label>
+      <HBox alignment="CENTER" layoutX="57.0" layoutY="516.0" prefHeight="27.0" prefWidth="341.0" spacing="15.0" AnchorPane.leftAnchor="57.0" AnchorPane.topAnchor="516.0">
+         <children>
+            <Button fx:id="btnAddParts" mnemonicParsing="false" onAction="#addPartsClicked" prefHeight="0.0" prefWidth="67.0" style="-fx-background-color: ORANGE;" text="Add" textAlignment="CENTER">
+               <font>
+                  <Font name="Century Gothic" size="14.0" />
+               </font>
+               <HBox.margin>
+                  <Insets right="15.0" />
+               </HBox.margin>
+            </Button>
+            <Button fx:id="btnModifyParts" layoutX="10.0" layoutY="10.0" mnemonicParsing="false" onAction="#modifyPartsClicked" prefHeight="0.0" prefWidth="67.0" style="-fx-background-color: ORANGE;" text="Modify" textAlignment="CENTER">
+               <font>
+                  <Font name="Century Gothic" size="14.0" />
+               </font>
+               <HBox.margin>
+                  <Insets right="15.0" />
+               </HBox.margin>
+            </Button>
+            <Button fx:id="btnDeleteParts" layoutX="77.0" layoutY="10.0" mnemonicParsing="false" onAction="#deletePartsClicked" prefHeight="0.0" prefWidth="67.0" style="-fx-background-color: ORANGE;" text="Delete" textAlignment="CENTER">
+               <font>
+                  <Font name="Century Gothic" size="14.0" />
+               </font>
+               <HBox.margin>
+                  <Insets right="15.0" />
+               </HBox.margin>
+            </Button>
+         </children>
+      </HBox>
+      <TableView fx:id="partTableView" layoutX="53.0" layoutY="88.0" prefHeight="426.0" prefWidth="349.0" style="-fx-background-color: Gray;" AnchorPane.leftAnchor="53.0" AnchorPane.topAnchor="88.0">
+        <columns>
+          <TableColumn fx:id="partIDColumn" prefWidth="75.0" text="Part ID" />
+          <TableColumn fx:id="partNameColumn" prefWidth="75.0" text="Part Name" />
+            <TableColumn fx:id="partStockColumn" prefWidth="75.0" text="# in Inventory" />
+            <TableColumn fx:id="partPriceColumn" prefWidth="75.0" text="Price per Unit" />
+        </columns>
+         <columnResizePolicy>
+            <TableView fx:constant="CONSTRAINED_RESIZE_POLICY" />
+         </columnResizePolicy>
+      </TableView>
+      <Rectangle arcHeight="5.0" fill="#28282830" height="493.0" layoutX="474.0" layoutY="54.0" stroke="BLACK" strokeType="INSIDE" width="367.0" />
+      <TextField fx:id="searchProductField" layoutX="652.0" layoutY="59.0" onAction="#searchProductEnter" prefHeight="24.0" prefWidth="180.0" promptText="Search by ID or Name" />
+      <Label layoutX="483.0" layoutY="54.0" prefHeight="31.0" prefWidth="173.0" text="Products">
+         <font>
+            <Font name="Century Gothic Bold" size="24.0" />
+         </font>
+      </Label>
+      <HBox alignment="CENTER" layoutX="487.0" layoutY="516.0" prefHeight="27.0" prefWidth="341.0" spacing="15.0">
+         <children>
+            <Button mnemonicParsing="false" onAction="#addProductClicked" prefHeight="0.0" prefWidth="67.0" style="-fx-background-color: ORANGE;" text="Add" textAlignment="CENTER">
+               <font>
+                  <Font name="Century Gothic" size="14.0" />
+               </font>
+               <HBox.margin>
+                  <Insets right="15.0" />
+               </HBox.margin>
+            </Button>
+            <Button layoutX="10.0" layoutY="10.0" mnemonicParsing="false" onAction="#modifyProductClicked" prefHeight="0.0" prefWidth="67.0" style="-fx-background-color: ORANGE;" text="Modify" textAlignment="CENTER">
+               <font>
+                  <Font name="Century Gothic" size="14.0" />
+               </font>
+               <HBox.margin>
+                  <Insets right="15.0" />
+               </HBox.margin>
+            </Button>
+            <Button layoutX="77.0" layoutY="10.0" mnemonicParsing="false" onAction="#deleteProductClicked" prefHeight="0.0" prefWidth="67.0" style="-fx-background-color: ORANGE;" text="Delete" textAlignment="CENTER">
+               <font>
+                  <Font name="Century Gothic" size="14.0" />
+               </font>
+               <HBox.margin>
+                  <Insets right="15.0" />
+               </HBox.margin>
+            </Button>
+         </children>
+      </HBox>
+      <TableView fx:id="productTableView" layoutX="483.0" layoutY="88.0" prefHeight="426.0" prefWidth="349.0" style="-fx-background-color: Gray;">
+         <columns>
+            <TableColumn fx:id="productIDColumn" prefWidth="75.0" text="Product ID" />
+            <TableColumn fx:id="productNameColumn" prefWidth="75.0" text="Product Name" />
+            <TableColumn fx:id="productStockColumn" prefWidth="75.0" text="# in Inventory" />
+            <TableColumn fx:id="productPriceColumn" prefWidth="75.0" text="Price per Unit" />
+         </columns>
+         <columnResizePolicy>
+            <TableView fx:constant="CONSTRAINED_RESIZE_POLICY" />
+         </columnResizePolicy>
+      </TableView>
+   </children>
+</AnchorPane>
